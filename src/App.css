@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+.post-title{
+  text-align: center;
+}
+
+.posts-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.post-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form{
+  padding: 5px;
+  text-align: center;
+}
+.navigation{
+  display: flex;
+  justify-content: space-around;
+}

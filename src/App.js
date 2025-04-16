@@ -1,24 +1,31 @@
 import logo from './logo.svg';
 import './App.css';
+import Navbar from './components/Navbar';
+import PostList from './components/PostList';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [posts, setPosts] = useState([])
+  const [ search, setSearch] = useState("")
+
+  useEffect(()=>{
+    // code to be executed
+    fetch("http://localhost:4000/posts")
+    .then(res => res.json())
+    .then(data => setPosts(data))
+
+  }, []
+  // dependency array
+)
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <PostList posts={posts}/>
     </div>
+    
+    
   );
 }
 
